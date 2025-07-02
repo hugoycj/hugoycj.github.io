@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chongjie Ye - Research</title>
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 2px solid #2c5282;
+            padding: 30px 0;
+            margin-bottom: 40px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            color: #2c5282;
+            margin-bottom: 10px;
+        }
+
+        .header-info .position {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .header-info .affiliation {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #2c5282;
+            text-decoration: none;
+            padding: 8px 12px;
+            border: 1px solid #2c5282;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            background: #2c5282;
+            color: white;
+        }
+
+        /* About Section */
+        .about-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c5282;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-weight: normal;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .about-text strong {
+            color: #2c5282;
+        }
+
+        .about-text a {
+            color: #2c5282;
+            text-decoration: none;
+        }
+
+        .about-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Publications Section */
+        .publications-section {
+            margin-bottom: 50px;
+        }
+
+        .publications-note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .publication-item {
+            display: flex;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-image {
+            width: 220px;
+            height: 140px;
+            object-fit: contain;
+            background: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .publication-content {
+            flex: 1;
+        }
+
+        .publication-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c5282;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .publication-venue {
+            font-weight: bold;
+            color: #d69e2e;
+            margin-bottom: 8px;
+        }
+
+        .publication-authors {
+            color: #4a5568;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .publication-authors strong {
+            color: #2c5282;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 3px;
+            text-decoration: none;
+            color: #4a5568;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .publication-link:hover {
+            background: #f7fafc;
+            border-color: #2c5282;
+            color: #2c5282;
+        }
+
+        .publication-link i {
+            font-size: 0.8rem;
+        }
+
+        /* Research Interests */
+        .interests-section {
+            margin-bottom: 50px;
+        }
+
+        .interests-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .interests-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .interests-list li:before {
+            content: "▪";
+            color: #2c5282;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Open Source Projects Styles */
+        .open-source-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .os-card {
+            background: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px 18px 14px 18px;
+            width: calc(33.333% - 12px);
+            min-width: 260px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: box-shadow 0.2s;
+        }
+
+        .os-card:hover {
+            box-shadow: 0 4px 16px rgba(44,82,130,0.08);
+            border-color: #b2c2e0;
+        }
+
+        .os-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .os-card-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #2c5282;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .os-card-title:hover {
+            text-decoration: underline;
+        }
+
+        .os-star-badge {
+            height: 22px;
+            margin-left: 8px;
+        }
+
+        .os-card-desc {
+            font-size: 0.97rem;
+            color: #444;
+            margin-top: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .header-info h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .publication-item {
+                flex-direction: column;
+            }
+
+            .publication-image {
+                width: 100%;
+                height: 200px;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .publication-links {
+                justify-content: center;
+            }
+
+            .os-card {
+                width: calc(50% - 12px);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .open-source-cards {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .os-card {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-info h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .about-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <img src="https://avatars.githubusercontent.com/u/40767265?v=4&size=512" alt="Chongjie Ye" class="profile-image">
+                <div class="header-info">
+                    <h1>Chongjie Ye</h1>
+                    <p class="position">Ph.D. Student</p>
+                    <p class="affiliation">
+                        <strong>The Chinese University of Hong Kong, Shenzhen</strong><br>
+                        Supervised by Prof. <a href="https://gaplab.cuhk.edu.cn/people/hanxiaoguang/" target="_blank">Xiaoguang Han</a>
+                    </p>
+                    <div class="contact-info">
+                        <a href="mailto:chongjieye@link.cuhk.edu.cn">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=hP4G9iUAAAAJ" target="_blank">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://github.com/hugoycj" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                <strong>Chongjie Ye</strong> is a Ph.D. student at <a href="https://www.cuhk.edu.cn/en" target="_blank">The Chinese University of Hong Kong, Shenzhen</a>, supervised by Prof. <a href="https://gaplab.cuhk.edu.cn/people/hanxiaoguang/" target="_blank">Xiaoguang Han</a>. He received his bachelor's degree from CUHK-Shenzhen in 2022. His research focuses on generative 3D geometry modeling, with particular emphasis on photometric stereo, surface normal estimation, and 3D reconstruction from single or multiple images.
+            </p>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="publications-section">
+            <h2 class="section-title">Selected Publications</h2>
+            <p class="publications-note">
+                (* indicates equal contribution, † denotes project lead, ‡ means corresponding author)
+            </p>
+
+            <div class="publication-item">
+                <img src="imgs/LINO.png" alt="LINO" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title">Light of Normals: Unified Feature Representation for Universal Photometric Stereo</h3>
+                    <p class="publication-venue">ArXiv, 2025</p>
+                    <p class="publication-authors">
+                        Hong Li*, Houyuan Chen*, <strong>Chongjie Ye†</strong>, Zhaoxi Chen, Bohan Li, Shaocong Xu, Xianda Guo, Xuhui Liu, Yikai Wang, Baochang Zhang, Satoshi Ikehata, Boxin Shi, Anyi Rao, Hao Zhao‡
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/pdf/2403.19319" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Paper
+                        </a>
+                        <a href="https://houyuanchen111.github.io/lino.github.io/" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Project Page
+                        </a>
+                        <a href="https://github.com/houyuanchen111/LINO_UniPS" target="_blank">
+                            <img src="https://img.shields.io/github/stars/houyuanchen111/LINO_UniPS?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/Hi3DGen.png" alt="Hi3DGen" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title">Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging</h3>
+                    <p class="publication-venue">International Conference on Computer Vision (ICCV), 2025</p>
+                    <p class="publication-authors">
+                        <strong>Chongjie Ye*</strong>, Yushuang Wu*, Ziteng Lu, Jiahao Chang, Xiaoyang Guo, Jiaqing Zhou, Hao Zhao, Xiaoguang Han‡
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/pdf/2503.22236" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Paper
+                        </a>
+                        <a href="https://stable-x.github.io/Hi3DGen/" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Project Page
+                        </a>
+                        <a href="https://github.com/Stable-X/Stable3DGen" target="_blank">
+                            <img src="https://img.shields.io/github/stars/Stable-X/Stable3DGen?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/Stable-Sim2Real.png" alt="Stable-Sim2Real" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title">Stable-Sim2Real: Exploring Simulation of Real-Captured 3D Data with Two-Stage Depth Diffusion</h3>
+                    <p class="publication-venue">International Conference on Computer Vision (ICCV), 2025</p>
+                    <p class="publication-authors">
+                        Mutian Xu, <strong>Chongjie Ye</strong>, Haolin Liu, Yushuang Wu, Jiahao Chang, Xiaoguang Han‡
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://mutianxu.github.io/Stable-Sim2Real/" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Project Page
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/StableNormal.jpg" alt="StableNormal" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title">StableNormal: Reducing Diffusion Variance for Stable and Sharp Normal</h3>
+                    <p class="publication-venue">SIGGRAPH Asia 2024 (ACM Transactions on Graphics)</p>
+                    <p class="publication-authors">
+                        <strong>Chongjie Ye*</strong>, Lingteng Qiu*, Xiaodong Gu, Qi Zuo, Yushuang Wu, Zilong Dong, Liefeng Bo, Yuliang Xiu‡, Xiaoguang Han‡
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/pdf/2406.16864" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Paper
+                        </a>
+                        <a href="https://stable-x.github.io/StableNormal/" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Project Page
+                        </a>
+                        <a href="https://github.com/Stable-X/StableNormal"  target="_blank">
+                            <img src="https://img.shields.io/github/stars/Stable-X/StableNormal?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/GauStudio.jpg" alt="GauStudio" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title">GauStudio: A Modular Framework for 3D Gaussian Splatting and Beyond</h3>
+                    <p class="publication-venue">ArXiv, 2024</p>
+                    <p class="publication-authors">
+                        <strong>Chongjie Ye*</strong>, Yinyu Nie*, Jiahao Chang*, Yuantao Chen, Yihao Zhi, Xiaoguang Han‡
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2403.19319" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Paper
+                        </a>
+                        <a href="https://github.com/GAP-LAB-CUHK-SZ/GauStudio"  target="_blank">
+                            <img src="https://img.shields.io/github/stars/GAP-LAB-CUHK-SZ/GauStudio?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/LASA.png" alt="LASA" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title">LASA: Instance Reconstruction from Real Scans using A Large-scale Aligned Shape Annotation Dataset</h3>
+                    <p class="publication-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024</p>
+                    <p class="publication-authors">
+                        Haolin Liu*, <strong>Chongjie Ye*</strong>, Yinyu Nie, Yingfan He, Xiaoguang Han‡
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://gap-lab-cuhk-sz.github.io/LASA/" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Project Page
+                        </a>
+                        <a href="https://github.com/GAP-LAB-CUHK-SZ/LASA"  target="_blank">
+                            <img src="https://img.shields.io/github/stars/GAP-LAB-CUHK-SZ/LASA?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/MVImgNet.png" alt="MVImgNet" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title">MVImgNet: A Large-scale Dataset of Multi-view Images</h3>
+                    <p class="publication-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023</p>
+                    <p class="publication-authors">
+                        Xianggang Yu*, Mutian Xu*†, Yidan Zhang*, Haolin Liu*, <strong>Chongjie Ye*</strong>, Yushuang Wu, Zizheng Yan, Chenming Zhu, Zhangyang Xiong, Tianyou Liang, Guanying Chen, Shuguang Cui, Xiaoguang Han‡
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://gap-lab-cuhk-sz.github.io/MVImgNet/" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Project Page
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/Darch.png" alt="Darch" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title">Darch: Dental arch prior-assisted 3D tooth instance segmentation</h3>
+                    <p class="publication-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022</p>
+                    <p class="publication-authors">
+                        Liangdong Qiu*, <strong>Chongjie Ye*</strong>, Pei Chen, Yunbi Liu, Xiaoguang Han‡, Shuguang Cui
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://ieeexplore.ieee.org/document/9879934" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Paper
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Source Projects Section -->
+        <section class="publications-section">
+            <h2 class="section-title">Open Source Projects</h2>
+            <div class="open-source-cards">
+                <div class="os-card">
+                    <div class="os-card-header">
+                        <a href="https://github.com/hugoycj/Instant-angelo" target="_blank" class="os-card-title">
+                            <i class="fab fa-github"></i> Instant-angelo
+                        </a>
+                        <img src="https://img.shields.io/github/stars/hugoycj/Instant-angelo?style=social" alt="GitHub Stars" class="os-star-badge">
+                    </div>
+                    <div class="os-card-desc">Build high-fidelity Digital Twin within 20 Minutes!</div>
+                </div>
+                <div class="os-card">
+                    <div class="os-card-header">
+                        <a href="https://github.com/Stable-X/StableDelight" target="_blank" class="os-card-title">
+                            <i class="fab fa-github"></i> StableDelight
+                        </a>
+                        <img src="https://img.shields.io/github/stars/Stable-X/StableDelight?style=social" alt="GitHub Stars" class="os-star-badge">
+                    </div>
+                    <div class="os-card-desc">Revealing Hidden Textures by Removing Specular Reflections</div>
+                </div>
+                <div class="os-card">
+                    <div class="os-card-header">
+                        <a href="https://github.com/hugoycj/2.5d-gaussian-splatting" target="_blank" class="os-card-title">
+                            <i class="fab fa-github"></i> 2.5D Gaussian Splatting
+                        </a>
+                        <img src="https://img.shields.io/github/stars/hugoycj/2.5d-gaussian-splatting?style=social" alt="GitHub Stars" class="os-star-badge">
+                    </div>
+                    <div class="os-card-desc">Advanced 2.5D Gaussian Splatting implementation for efficient 3D reconstruction</div>
+                </div>
+                <div class="os-card">
+                    <div class="os-card-header">
+                        <a href="https://github.com/hugoycj/NeuralBaker" target="_blank" class="os-card-title">
+                            <i class="fab fa-github"></i> NeuralBaker
+                        </a>
+                        <img src="https://img.shields.io/github/stars/hugoycj/NeuralBaker?style=social" alt="GitHub Stars" class="os-star-badge">
+                    </div>
+                    <div class="os-card-desc">Neural texture baking for 3D models with advanced rendering techniques</div>
+                </div>
+                <div class="os-card">
+                    <div class="os-card-header">
+                        <a href="https://github.com/hugoycj/2d-gaussian-splatting-great-again" target="_blank" class="os-card-title">
+                            <i class="fab fa-github"></i> 2D Gaussian Splatting Great Again
+                        </a>
+                        <img src="https://img.shields.io/github/stars/hugoycj/2d-gaussian-splatting-great-again?style=social" alt="GitHub Stars" class="os-star-badge">
+                    </div>
+                    <div class="os-card-desc">Improved 2D Gaussian Splatting with enhanced performance and quality</div>
+                </div>
+                <div class="os-card">
+                    <div class="os-card-header">
+                        <a href="https://github.com/hugoycj/light-hloc" target="_blank" class="os-card-title">
+                            <i class="fab fa-github"></i> Light-HLoc
+                        </a>
+                        <img src="https://img.shields.io/github/stars/hugoycj/light-hloc?style=social" alt="GitHub Stars" class="os-star-badge">
+                    </div>
+                    <div class="os-card-desc">Lightweight hierarchical localization for efficient visual positioning</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2021 - 2025 by Chongjie Ye. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

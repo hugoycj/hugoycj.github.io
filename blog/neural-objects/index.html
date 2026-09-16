@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Objects: The Missing Abstraction in World Models - Chongjie Ye</title>
+    <meta name="description" content="There has been significant progress in teaching machines to model the world. From large language models operating over text, to emerging world models that predict pixels or states over time, we are…">
+    <meta name="author" content="Chongjie Ye">
+    <link rel="canonical" href="https://hugoycj.github.io/blog/neural-objects/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Neural Objects: The Missing Abstraction in World Models">
+    <meta property="og:description" content="There has been significant progress in teaching machines to model the world. From large language models operating over text, to emerging world models that predict pixels or states over time, we are…">
+    <meta property="og:url" content="https://hugoycj.github.io/blog/neural-objects/">
+    <meta property="og:image" content="https://hugoycj.github.io/imgs/NeuralObjects.jpg">
+    <meta property="og:site_name" content="Chongjie Ye">
+    <meta property="article:published_time" content="2026-03-27">
+    <meta property="article:author" content="https://hugoycj.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ychngji6">
+    <meta name="twitter:creator" content="@ychngji6">
+    <meta name="twitter:title" content="Neural Objects: The Missing Abstraction in World Models">
+    <meta name="twitter:description" content="There has been significant progress in teaching machines to model the world. From large language models operating over text, to emerging world models that predict pixels or states over time, we are…">
+    <meta name="twitter:image" content="https://hugoycj.github.io/imgs/NeuralObjects.jpg">
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Neural Objects: The Missing Abstraction in World Models",
+    "description": "There has been significant progress in teaching machines to model the world. From large language models operating over text, to emerging world models that predict pixels or states over time, we are…",
+    "image": "https://hugoycj.github.io/imgs/NeuralObjects.jpg",
+    "datePublished": "2026-03-27",
+    "dateModified": "2026-03-27",
+    "author": {
+        "@type": "Person",
+        "name": "Chongjie Ye",
+        "url": "https://hugoycj.github.io/",
+        "sameAs": [
+            "https://x.com/ychngji6"
+        ]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Chongjie Ye",
+        "url": "https://hugoycj.github.io/"
+    },
+    "mainEntityOfPage": "https://hugoycj.github.io/blog/neural-objects/",
+    "url": "https://hugoycj.github.io/blog/neural-objects/",
+    "sameAs": "https://x.com/ychngji6/status/2037629061363888136",
+    "inLanguage": "en"
+}
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Times New Roman', Times, serif; line-height: 1.7; color: #333; background: #fff; }
+        .container { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+        .top-nav { font-size: 0.95rem; color: #4a5568; margin-bottom: 2rem; }
+        .top-nav a { color: #2c5282; text-decoration: none; }
+        .top-nav a:hover { text-decoration: underline; }
+        h1 { font-size: 2rem; line-height: 1.25; color: #2c5282; margin-bottom: 0.75rem; }
+        .meta { color: #666; font-size: 0.95rem; margin-bottom: 1.75rem; }
+        .meta a { color: #2c5282; text-decoration: none; }
+        .meta a:hover { text-decoration: underline; }
+        .cover { width: 100%; height: auto; border-radius: 6px; margin-bottom: 2rem; }
+        article h2 { font-size: 1.35rem; color: #2c5282; margin: 2.2rem 0 0.8rem; }
+        article p { font-size: 1.08rem; margin-bottom: 1.1rem; text-align: justify; }
+        article blockquote { margin: 1.2rem 0 1.4rem; padding: 0.6rem 1.2rem; border-left: 3px solid #2c5282; background: #f7fafc; color: #2d3748; font-style: italic; }
+        .footer-note { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e2e8f0; color: #666; font-size: 0.95rem; }
+        .footer-note a { color: #2c5282; text-decoration: none; }
+        .footer-note a:hover { text-decoration: underline; }
+        @media (max-width: 600px) { h1 { font-size: 1.6rem; } article p { text-align: left; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="top-nav"><a href="/">&larr; Chongjie Ye</a></nav>
+        <h1>Neural Objects: The Missing Abstraction in World Models</h1>
+        <p class="meta">Chongjie Ye &middot; March 27, 2026 &middot; Originally published as an <a href="https://x.com/ychngji6/status/2037629061363888136" target="_blank">article on X</a></p>
+        <img class="cover" src="/imgs/NeuralObjects.jpg" alt="Neural Objects: The Missing Abstraction in World Models">
+        <article>
+<p>There has been significant progress in teaching machines to model the world. From large language models operating over text, to emerging world models that predict pixels or states over time, we are steadily increasing the scope of what machines can represent and simulate. Yet there remains a <strong>missing abstraction</strong>—one that sits between raw sensory data and full-scene representations.</p>
+<p>That abstraction is the <strong>object</strong>.</p>
+<p>Not as a bounding box, not as a label, but as a <strong>neural object</strong>: a persistent, structured, and manipulable unit of the world.</p>
+<h2>The Problem with Pixels-All-the-Way</h2>
+<p>Most current world models follow a clean formula:</p>
+<blockquote>(history + action) → next frame</blockquote>
+<p>Feed in what happened. Get back what happens next. It&#x27;s elegant. It scales. And it&#x27;s fundamentally limited.</p>
+<p>Here&#x27;s why. Try telling a pixel-based world model: &quot;move the chair 10 cm to the left.&quot; You can&#x27;t. There is no chair in there. There are activations that, collectively, <em>look like</em> a chair when decoded. But the chair has no identity. No boundary. No handle you can grab.</p>
+<p>This is like asking a language model to <em>be</em> the program instead of <em>writing</em> code. We already know how that story ends.</p>
+<p>Pixel-based world models bury objects inside their weights. They can render a scene, but they can&#x27;t <em>reason about what&#x27;s in it</em>. You can&#x27;t edit one object without risking the rest. You can&#x27;t reuse a table across two different rooms. You can&#x27;t track the same cup from the counter to the dishwasher.</p>
+<p>Everything that makes real-world interaction possible — <strong>persistence, identity, manipulation</strong> — is invisible at the pixel level.</p>
+<h2>The Problem with Full Scenes</h2>
+<p>So maybe go bigger? Represent the whole scene as a single structure — a NeRF, a Gaussian splat, a large implicit field.</p>
+<p>This gives you structure, but at the wrong granularity. A full scene is:</p>
+<p><strong>Too entangled</strong> to edit locally — move one wall, and you&#x27;re re-optimizing the whole representation. <strong>Too large</strong> to reuse — you can&#x27;t drop &quot;the kitchen from scene 47&quot; into a new environment without hauling everything along. <strong>Too monolithic</strong> to compose — you can&#x27;t build new worlds from parts.</p>
+<p>If pixels are too fine-grained and scenes are too coarse, then the right abstraction sits exactly where you&#x27;d expect: in the middle. At the level of objects.</p>
+<h2>What Is a Neural Object?</h2>
+<p>A neural object is a learned representation that encapsulates four things about a single entity: its <strong>geometry</strong> (shape, volume, how it occupies space), its <strong>appearance</strong> (texture, material, how it responds to light), its <strong>state</strong> (where it is, how fast it&#x27;s moving, whether it&#x27;s deformed), and its <strong>affordances</strong> (what you can <em>do</em> with it).</p>
+<p>That last one matters more than people think.</p>
+<p>A coffee mug is not just a mesh with a brown texture. It affords grasping. It affords containing liquid. Tip it, and the coffee spills. These aren&#x27;t decorative properties — they&#x27;re the reason robots need to understand mugs at all.</p>
+<p>Affordances can&#x27;t be cleanly inferred from pixels alone. They can&#x27;t be represented at the scene level without entangling every object&#x27;s interaction potential with every other. They belong at the object level. They always have.</p>
+<p>Unlike traditional 3D assets, neural objects aren&#x27;t static files sitting in a library. They&#x27;re learned from data, conditioned on context (a text description, a reference image, a partial observation), and generative — you can sample new instances, edit existing ones, and compose them into novel configurations.</p>
+<p>And unlike pixels, they&#x27;re <strong>factorized</strong>. They isolate structure from context. The chair is the chair regardless of the room it&#x27;s in.</p>
+<h2>Objects as Interfaces</h2>
+<p>The real power here isn&#x27;t just representational. It&#x27;s <strong>interfacial</strong>.</p>
+<p>Think about what a neural object enables between humans and machines. A human can inspect an object, rotate it, tweak its geometry, swap its material. A model can generate it, predict its future state, simulate what happens when it collides with something else. Both sides are working with the same unit. This creates something rare in AI: a genuinely iterative, bidirectional workflow where human intent and machine capability meet on common ground.</p>
+<p>Now think about what it enables between <em>machines and machines</em>. A perception system detects and initializes objects. A planner reasons about their states and spatial relations. A controller executes actions on them. A simulator updates their dynamics. Each subsystem reads and writes to the same abstraction.</p>
+<p>Without objects, these subsystems communicate through either raw pixels (inefficient, ambiguous) or shared latent spaces (fragile, non-modular). Neither is great. Neural objects give you a structured, inspectable, interoperable interface — the kind of clean boundary that makes complex systems actually work.</p>
+<h2>The Factorized World Model</h2>
+<p>This points toward a different architecture for world models. Instead of one monolithic function that maps history and actions to the next observation, you get a factorized stack:</p>
+<p><strong>Objects</strong> at the center — the core representation. <strong>Relations</strong> around them — spatial constraints, physical contacts, semantic groupings. <strong>Dynamics</strong> governing them — how objects evolve when forces are applied, time passes, or interactions occur. <strong>Rendering</strong> on top — how objects become the pixels you actually observe.</p>
+<p>This is the same move that transformed software engineering. We went from monolithic executables to structured code — functions, classes, modules, interfaces. Neural objects are to world models what functions are to programs: reusable, composable building blocks that make the whole system more than the sum of its parts.</p>
+<h2>Persistence Changes Everything</h2>
+<p>Real-world interaction depends on a deceptively simple property: <strong>continuity</strong>.</p>
+<p>The mug you picked up is the same mug you set down. The door you opened five minutes ago is still open. The screwdriver you used on the first bolt is the same one you use on the third.</p>
+<p>This sounds trivial. It isn&#x27;t.</p>
+<p>Without explicit object representations, a world model must reconstruct identity from scratch at every timestep. It has to re-discover, from raw sensory patterns, that the blob of pixels in frame 312 corresponds to the same entity as the blob in frame 1. Every frame is an amnesiac.</p>
+<p>Neural objects give you a natural handle for <strong>identity over time</strong>. And once you have persistent identity, you get long-horizon reasoning for free. You get memory. You get causality — the ability to say &quot;this happened <em>because</em> that object was in that state.&quot;</p>
+<h2>Worlds Are Not Generated. They Are Constructed.</h2>
+<p>Here&#x27;s where this leads.</p>
+<p>If objects are the right abstraction, then worlds become compositions of objects, relations, and rules. Models generate objects, not just pixels. Systems operate over objects, not just frames. Users manipulate objects, not just prompts.</p>
+<p>This is a paradigm shift. The current approach says: &quot;throw everything into a giant model and let it hallucinate a plausible future.&quot; The object-centric approach says: &quot;build a world from parts, with structure you can inspect, edit, and trust.&quot;</p>
+<p>One path gives you impressive demos. The other gives you systems you can actually use.</p>
+<h2>The Hard Questions</h2>
+<p>I don&#x27;t want to pretend any of this is solved.</p>
+<p>What&#x27;s the right representation for a neural object — implicit fields, Gaussian splats, meshes, some hybrid nobody&#x27;s proposed yet? How do you discover object boundaries without supervision? How do you encode affordances and dynamics in a way that generalizes? Where does learned physics end and explicit simulation begin?</p>
+<p>And the deepest question: do we need to engineer objects into our models, or will they emerge from scale the way linguistic structure emerged in LLMs?</p>
+<p>I don&#x27;t know. But I believe the field has been avoiding this question for too long, seduced by the elegance of end-to-end pixel prediction. The bitter lesson taught us to scale. It didn&#x27;t say we should scale <em>without structure</em>.</p>
+<p>Objects are how the world is built. They should be how we model it.</p>
+        </article>
+        <p class="footer-note">This essay was first published on X on March 27, 2026 and is mirrored here. Discuss it <a href="https://x.com/ychngji6/status/2037629061363888136" target="_blank">on X</a>, or go back to the <a href="/">homepage</a>.</p>
+    </div>
+</body>
+</html>

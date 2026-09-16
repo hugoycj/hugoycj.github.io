@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chongjie Ye - Research</title>
     <link rel="shortcut icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -106,6 +106,24 @@
             font-size: 1.1rem;
             line-height: 1.7;
             text-align: justify;
+        }
+
+        .publication-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .publication-title a:hover {
+            text-decoration: underline;
+        }
+
+        .project-desc {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 0.4rem 0 0.6rem;
+        }
+
+        .about-text + .about-text {
+            margin-top: 0.9rem;
         }
 
         .about-text strong {
@@ -396,6 +414,9 @@
                         <a href="https://github.com/hugoycj" target="_blank">
                             <i class="fab fa-github"></i> GitHub
                         </a>
+                        <a href="https://x.com/ychngji6" target="_blank">
+                            <i class="fab fa-x-twitter"></i> X
+                        </a>
                     </div>
                 </div>
             </div>
@@ -405,9 +426,132 @@
         <section class="about-section">
             <h2 class="section-title">About Me</h2>
             <p class="about-text">
-                <strong>Chongjie Ye</strong> is a Member of Technical Staff at <a href="https://www.worldlabs.ai/" target="_blank">World Labs</a>, working on spatial reconstruction. Before joining World Labs, he pursued his Ph.D. at <a href="https://www.cuhk.edu.cn/en" target="_blank">The Chinese University of Hong Kong, Shenzhen</a>, supervised by Prof. <a href="https://gaplab.cuhk.edu.cn/people/hanxiaoguang/" target="_blank">Xiaoguang Han</a>, and received his bachelor's degree from CUHK-Shenzhen in 2022. His research focuses on 3D reconstruction and generation, including feed-forward multi-view reconstruction, 3D native foundation models, surface normal estimation, and photometric stereo.
+                <strong>Chongjie Ye</strong> is a Member of Technical Staff at <a href="https://www.worldlabs.ai/" target="_blank">World Labs</a>, where he works on spatial reconstruction that turns a handful of ordinary photos into an explicit, renderable 3D scene, and fills in what the photos never saw. He received his Ph.D. and bachelor's degree from <a href="https://www.cuhk.edu.cn/en" target="_blank">The Chinese University of Hong Kong, Shenzhen</a>, advised by Prof. <a href="https://gaplab.cuhk.edu.cn/people/hanxiaoguang/" target="_blank">Xiaoguang Han</a>.
+            </p>
+            <p class="about-text">
+                His research asks how reconstruction and generation can strengthen each other. Generation supplies reconstruction with priors: resolving the ambiguities inherent in recovering 3D from images, completing what a capture cannot observe, and keeping geometry estimation robust to reflectance and sensor noise. Reconstruction, in turn, grounds and scales generation: it anchors generated shapes in real observation, and it turns the abundance of ordinary images and videos into 3D data, a scalable path that hand-made 3D assets alone cannot offer.
             </p>
         </section>
+
+        <!-- Recent Projects Section -->
+        <section class="publications-section">
+            <h2 class="section-title">Recent Projects</h2>
+
+            <div class="publication-item">
+                <img src="imgs/Atlas.jpg" alt="Atlas" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title"><a href="https://www.worldlabs.ai/blog/atlas" target="_blank">Atlas: A World Model for Spatial Intelligence</a></h3>
+                    <p class="publication-venue">World Labs, 2026</p>
+                    <p class="project-desc">
+                        Atlas is World Labs' omni world model for spatial intelligence. It reconstructs real-world scenes from one to dozens of input images into explicit 3D outputs (point clouds and Gaussian splats) and renders novel views, outperforming specialized state-of-the-art 3D reconstruction models.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://www.worldlabs.ai/blog/atlas" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Blog
+                        </a>
+                        <a href="https://x.com/theworldlabs/status/2094839756329041984" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.fxtwitter.com%2Ftheworldlabs%2Fstatus%2F2094839756329041984&query=%24.tweet.views&label=Views%20%E2%96%B6&logo=x&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/MeshyAutoSplit.jpg" alt="Meshy Auto Split" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title"><a href="https://www.meshy.ai/blog/auto-split-3d-printing" target="_blank">Meshy Auto Split</a></h3>
+                    <p class="publication-venue">Meshy AI, 2026</p>
+                    <p class="project-desc">
+                        One-click splitting of generated or uploaded 3D models into print-ready parts: structure-aware cuts, watertight capping, auto-arranged build plates, and 3MF export for slicers such as Bambu Studio and OrcaSlicer.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://www.meshy.ai/blog/auto-split-3d-printing" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Blog
+                        </a>
+                        <a href="https://x.com/MeshyAI/status/2072940986519748789" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.fxtwitter.com%2FMeshyAI%2Fstatus%2F2072940986519748789&query=%24.tweet.views&label=Views%20%E2%96%B6&logo=x&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="publication-item">
+                <img src="imgs/KIRI_PBR.jpg" alt="KIRI Engine 4.0 PBR Texture" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title"><a href="https://www.kiriengine.app/blog/kiri-engine-4.0-release" target="_blank">KIRI Engine 4.0: AI-Powered PBR Texture</a></h3>
+                    <p class="publication-venue">KIRI Innovations, 2025</p>
+                    <p class="project-desc">
+                        Diffusion-based PBR material generation for photogrammetry scans in KIRI Engine 4.0. Instead of a single baked color texture, scans export with physically based materials (albedo, roughness, normal, and displacement maps), so captured objects render realistically under any lighting.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://www.kiriengine.app/blog/kiri-engine-4.0-release" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Blog
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=lusn-GDjRWU" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Freturnyoutubedislikeapi.com%2Fvotes%3FvideoId%3Dlusn-GDjRWU&query=%24.viewCount&label=Views%20%E2%96%B6&logo=youtube&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/KIRI_LiDAR.jpg" alt="KIRI Engine LiDAR Enhancement" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title"><a href="https://www.kiriengine.app/blog/kiri-engine-3.14-release" target="_blank">KIRI Engine 3.14: AI-Enhanced LiDAR Scene Scan</a></h3>
+                    <p class="publication-venue">KIRI Innovations, 2025</p>
+                    <p class="project-desc">
+                        Refines raw iPhone/iPad LiDAR scene scans with learned priors. Backed by <a href="https://github.com/Stable-X/StableNormal" target="_blank">StableNormal</a> for surface normal estimation, PromptDA for metric depth refinement, and <a href="https://github.com/hugoycj/light-hloc" target="_blank">Light-hloc</a> for camera pose refinement, it drastically improves the resolution, density, and metric accuracy of the depth maps, yielding sharper edges and clean low-texture surfaces.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://www.kiriengine.app/blog/kiri-engine-3.14-release" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Blog
+                        </a>
+                        <a href="https://youtu.be/9jTCKewoPTI" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Freturnyoutubedislikeapi.com%2Fvotes%3FvideoId%3D9jTCKewoPTI&query=%24.viewCount&label=Views%20%E2%96%B6&logo=youtube&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="publication-item">
+                <img src="imgs/KIRI_3DGStoMesh2.jpg" alt="KIRI Engine 3DGS to Mesh 2.0" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title"><a href="https://kiri-innovation.github.io/3DGStoMesh2/" target="_blank">KIRI Engine 3.12: 3DGS to Mesh 2.0</a></h3>
+                    <p class="publication-venue">KIRI Innovations, 2024</p>
+                    <p class="project-desc">
+                        Backed by <a href="https://github.com/Stable-X/StableDelight" target="_blank">StableDelight</a> and <a href="https://github.com/Stable-X/StableNormal" target="_blank">StableNormal</a>. Predicted surface normals and specular reflection removal regularize the surface during mesh extraction, eliminating the holes and defects that shiny and transparent regions cause in 3DGS, and delivering clean, watertight meshes on par with professional 3D scanners.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://kiri-innovation.github.io/3DGStoMesh2/" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Blog
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=88X81MYZl8k" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Freturnyoutubedislikeapi.com%2Fvotes%3FvideoId%3D88X81MYZl8k&query=%24.viewCount&label=Views%20%E2%96%B6&logo=youtube&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <img src="imgs/KIRI_3DGStoMesh1.jpg" alt="KIRI Engine 3DGS to Mesh 1.0" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title"><a href="https://www.kiriengine.app/blog/announcement/3dgs-to-mesh-convert-visualizations-to-obj" target="_blank">KIRI Engine: 3DGS to Mesh 1.0</a></h3>
+                    <p class="publication-venue">KIRI Innovations, 2024</p>
+                    <p class="project-desc">
+                        The first app feature to convert 3D Gaussian Splatting scans into meshes. Backed by <a href="https://github.com/GAP-LAB-CUHK-SZ/GauStudio" target="_blank">GauStudio</a> and <a href="https://github.com/hugoycj/2.5d-gaussian-splatting" target="_blank">2.5D Gaussian Splatting</a>: surface meshes are reconstructed from depth rendered by the trained splat and exported as OBJ alongside the native PLY, making 3DGS captures usable in standard 3D pipelines.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://www.kiriengine.app/blog/announcement/3dgs-to-mesh-convert-visualizations-to-obj" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Blog
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=6dPBaV6M9u4" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Freturnyoutubedislikeapi.com%2Fvotes%3FvideoId%3D6dPBaV6M9u4&query=%24.viewCount&label=Views%20%E2%96%B6&logo=youtube&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+                    </section>
 
         <!-- Publications Section -->
         <section class="publications-section">
@@ -449,6 +593,9 @@
                         </a>
                         <a href="https://github.com/Tao-11-chen/ForeHOI" target="_blank">
                             <img src="https://img.shields.io/github/stars/Tao-11-chen/ForeHOI?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
+                        </a>
+                        <a href="https://x.com/ychngji6/status/2034713230938165691" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.fxtwitter.com%2Fychngji6%2Fstatus%2F2034713230938165691&query=%24.tweet.views&label=Views%20%E2%96%B6&logo=x&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
                         </a>
                     </div>
                 </div>
@@ -494,6 +641,9 @@
                         <a href="https://github.com/GAP-LAB-CUHK-SZ/ReconViaGen" target="_blank">
                             <img src="https://img.shields.io/github/stars/GAP-LAB-CUHK-SZ/ReconViaGen?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
                         </a>
+                        <a href="https://x.com/ychngji6/status/2040152871140999415" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.fxtwitter.com%2Fychngji6%2Fstatus%2F2040152871140999415&query=%24.tweet.views&label=Views%20%E2%96%B6&logo=x&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -516,6 +666,9 @@
                         <a href="https://github.com/Stable-X/Stable3DGen" target="_blank">
                             <img src="https://img.shields.io/github/stars/Stable-X/Stable3DGen?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
                         </a>
+                        <a href="https://x.com/ychngji6/status/1905571766980018409" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.fxtwitter.com%2Fychngji6%2Fstatus%2F1905571766980018409&query=%24.tweet.views&label=Views%20%E2%96%B6&logo=x&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -524,13 +677,19 @@
                 <img src="imgs/Stable-Sim2Real.png" alt="Stable-Sim2Real" class="publication-image">
                 <div class="publication-content">
                     <h3 class="publication-title">Stable-Sim2Real: Exploring Simulation of Real-Captured 3D Data with Two-Stage Depth Diffusion</h3>
-                    <p class="publication-venue">International Conference on Computer Vision (ICCV), 2025</p>
+                    <p class="publication-venue">International Conference on Computer Vision (ICCV), 2025 (Highlight)</p>
                     <p class="publication-authors">
                         Mutian Xu, <strong>Chongjie Ye</strong>, Haolin Liu, Yushuang Wu, Jiahao Chang, Xiaoguang Han‡
                     </p>
                     <div class="publication-links">
-                        <a href="https://mutianxu.github.io/Stable-Sim2Real/" class="publication-link" target="_blank">
+                        <a href="https://arxiv.org/abs/2507.23483" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Paper
+                        </a>
+                        <a href="https://mutianxu.github.io/stable-sim2real/" class="publication-link" target="_blank">
                             <i class="fas fa-globe"></i> Project Page
+                        </a>
+                        <a href="https://github.com/GAP-LAB-CUHK-SZ/stable-sim2real" target="_blank">
+                            <img src="https://img.shields.io/github/stars/GAP-LAB-CUHK-SZ/stable-sim2real?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
                         </a>
                     </div>
                 </div>
@@ -554,6 +713,9 @@
                         <a href="https://github.com/Stable-X/StableNormal"  target="_blank">
                             <img src="https://img.shields.io/github/stars/Stable-X/StableNormal?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
                         </a>
+                        <a href="https://x.com/ychngji6/status/1833010997864677797" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.fxtwitter.com%2Fychngji6%2Fstatus%2F1833010997864677797&query=%24.tweet.views&label=Views%20%E2%96%B6&logo=x&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -562,7 +724,7 @@
                 <img src="imgs/GauStudio.jpg" alt="GauStudio" class="publication-image">
                 <div class="publication-content">
                     <h3 class="publication-title">GauStudio: A Modular Framework for 3D Gaussian Splatting and Beyond</h3>
-                    <p class="publication-venue">ArXiv, 2024</p>
+                    <p class="publication-venue">Technical Report, 2024</p>
                     <p class="publication-authors">
                         <strong>Chongjie Ye*</strong>, Yinyu Nie*, Jiahao Chang*, Yuantao Chen, Yihao Zhi, Xiaoguang Han‡
                     </p>
@@ -586,11 +748,17 @@
                         Haolin Liu*, <strong>Chongjie Ye*</strong>, Yinyu Nie, Yingfan He, Xiaoguang Han‡
                     </p>
                     <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2312.12418" class="publication-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Paper
+                        </a>
                         <a href="https://gap-lab-cuhk-sz.github.io/LASA/" class="publication-link" target="_blank">
                             <i class="fas fa-globe"></i> Project Page
                         </a>
                         <a href="https://github.com/GAP-LAB-CUHK-SZ/LASA"  target="_blank">
                             <img src="https://img.shields.io/github/stars/GAP-LAB-CUHK-SZ/LASA?label=Stars%20%E2%98%85&logo=github&color=C8C" alt="GitHub Stars" style="height:20px;vertical-align:middle;">
+                        </a>
+                        <a href="https://x.com/ychngji6/status/1738245890027237595" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.fxtwitter.com%2Fychngji6%2Fstatus%2F1738245890027237595&query=%24.tweet.views&label=Views%20%E2%96%B6&logo=x&logoColor=white&color=C8C" alt="Video views" style="height:20px;vertical-align:middle;">
                         </a>
                     </div>
                 </div>
@@ -627,6 +795,32 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Blog Posts Section -->
+        <section class="publications-section">
+            <h2 class="section-title">Blog Posts</h2>
+
+            <div class="publication-item">
+                <img src="imgs/NeuralObjects.jpg" alt="Neural Objects" class="publication-image">
+                <div class="publication-content">
+                    <h3 class="publication-title"><a href="https://x.com/ychngji6/status/2037629061363888136" target="_blank">Neural Objects: The Missing Abstraction in World Models</a></h3>
+                    <p class="publication-venue">March 2026</p>
+                    <p class="project-desc">
+                        There has been significant progress in teaching machines to model the world, from large language models over text to world models that predict pixels or states over time. This post argues that objects are the missing abstraction in between.
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://x.com/ychngji6/status/2037629061363888136" class="publication-link" target="_blank">
+                            <i class="fas fa-globe"></i> Blog
+                        </a>
+                        <a href="https://x.com/ychngji6/status/2037629061363888136" target="_blank">
+                            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.fxtwitter.com%2Fychngji6%2Fstatus%2F2037629061363888136&query=%24.tweet.views&label=Views%20%E2%96%B6&logo=x&logoColor=white&color=C8C" alt="Post views" style="height:20px;vertical-align:middle;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
         </section>
 
         <!-- Open Source Projects Section -->
